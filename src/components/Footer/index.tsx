@@ -1,37 +1,37 @@
 import { useIntl } from 'umi';
-import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-layout';
 
 const Footer: React.FC = () => {
   const intl = useIntl();
   const defaultMessage = intl.formatMessage({
     id: 'app.copyright.produced',
-    defaultMessage: '蚂蚁集团体验技术部出品',
+    defaultMessage: 'Macrowing Software Technology Co.,Ltd.  沪ICP备07013484号-2',
   });
 
   const currentYear = new Date().getFullYear();
 
   return (
     <DefaultFooter
+    style={{backgroundColor: `rgba(${0}, ${0}, ${0}, ${0})`}}
       copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
-          key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
-          href: 'https://pro.ant.design',
-          blankTarget: true,
+          key: 'help',
+          title: '帮助',
+          href: 'www.吴彦祖.com',
+          blankTarget: false,
         },
         {
-          key: 'github',
-          title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
-          blankTarget: true,
+          key: 'secret',
+          title: '隐私',
+          href: 'www.陈冠希.com',
+          blankTarget: false,
         },
         {
-          key: 'Ant Design',
-          title: 'Ant Design',
-          href: 'https://ant.design',
-          blankTarget: true,
+          key: '条款',
+          title: '条款',
+          href: 'www.彭于晏.com',
+          blankTarget: false,
         },
       ]}
     />

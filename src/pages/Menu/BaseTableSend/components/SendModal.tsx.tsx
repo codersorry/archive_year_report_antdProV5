@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Modal, Button } from 'antd';
 
 import MyTree from './components/MyTree';
+import styles from '../index.less';
 
 const SendModal = (props) => {
   const { isModalVisibleSend, isShowModalSend } = props;
@@ -14,7 +14,7 @@ const SendModal = (props) => {
       destroyOnClose={true}
       visible={isModalVisibleSend}
       footer={
-        <div className="footerStyle">
+        <div className={styles.footerStyle}>
           <Button key="copy" type="primary" onClick={() => {}}>
             确认分发
           </Button>

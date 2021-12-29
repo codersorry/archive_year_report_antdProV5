@@ -6,6 +6,7 @@ const Settings: LayoutSettings & {
 } = {
   navTheme: 'light',
   // 拂晓蓝
+  // primaryColor: '#1b4285',
   primaryColor: '#1890ff',
   layout: 'mix', //   side/top/mix
   headerTheme: 'light', // mix模式下生效
@@ -13,9 +14,10 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: '鸿翼档案',
+  title: '',
   pwa: false,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  // logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  logo: 'logo.svg',
   iconfontUrl: '',
 };
 

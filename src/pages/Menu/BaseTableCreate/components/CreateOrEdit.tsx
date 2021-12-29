@@ -5,6 +5,8 @@ import { Modal, Row, Space, message, Button } from 'antd';
 import { addTable } from '@/services/Menu/baseTableCreate';
 import { updateTable } from '@/services/Menu/baseTableCreate';
 
+import styles from '../index.less'
+
 const CreateOrEdit = (props) => {
   //props获取的数据： 控制模态框开启的值/是否打开模态框函数/操作表格的引用/record
   const { isModalVisible, isShowModal, actionRef, record } = props;
@@ -50,7 +52,7 @@ const CreateOrEdit = (props) => {
           render: (props, doms) => {
             return (
               <Row>
-                <Space className="subBtn">
+                <Space className={styles.subBtn}>
                   {record
                     ? [
                         <Button key="save" type="primary" htmlType="submit">

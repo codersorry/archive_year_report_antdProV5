@@ -3,7 +3,7 @@ import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
 import { getTable } from '@/services/Menu/baseTableCreate';
 
-import './index.less';
+import styles from './index.less';
 
 type GithubIssueItem = {
   name: string;
@@ -55,7 +55,7 @@ const RoleManage = () => {
   return (
     <>
       <ProTable<GithubIssueItem>
-        tableClassName="tableStyle"
+        tableClassName={styles.tableStyle}
         options={false}
         rowSelection={{}}
         columns={columns}

@@ -3,17 +3,17 @@ import { Layout } from 'antd';
 import LeftTree from './components/LeftTree';
 import RightTable from './components/RightTable';
 
-import './index.less';
+import styles from './index.less';
 
 const { Sider, Content } = Layout;
 
 const BaseTableView = () => {
   return (
     <Layout>
-      <Sider className="siderStyle" theme="light">
+      <Sider className={styles.siderStyle} theme="light">
         <LeftTree />
       </Sider>
-      <Content className="contentStyle">
+      <Content className={styles.contentStyle}>
         <RightTable />
       </Content>
     </Layout>

@@ -9,6 +9,7 @@ import RightContent from '@/components/RightContent';
 // import { BookOutlined, LinkOutlined } from '@ant-design/icons';
 
 import { getUserInfo } from './services/User/user';
+import { message } from 'antd';
 
 const loginPath = '/user/login';
 
@@ -27,6 +28,14 @@ export async function getInitialState(): Promise<{
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
   const fetchUserInfo = async () => {
+    //判断本地token是否存在，不存在就跳转登录页，发送请求检测服务器token是否过期和本地token的验证(这里简单判断非空)
+    const currentToken = localStorage.getItem('access_token');
+    if (!currentToken) {
+      history.push(loginPath);
+      message.error('请先登录！');
+      return;
+    }
+
     //判断本地localStorage是否存在用户信息，存在直接本地获取，不存在再发起请求
     const userInfo = localStorage.getItem('userInfo');
     let response = {};
@@ -38,6 +47,7 @@ export async function getInitialState(): Promise<{
       response = JSON.parse(userInfo);
     }
     return response;
+    //服务器判断是否登录主页，返回错误信息
     // try {
     //   const msg = await getUserInfo();
     //   console.log(msg);
@@ -86,24 +96,24 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 增加一个 loading 的状态
     //右边小齿轮调节样式
     // childrenRender: (children, props) => {
-      // if (initialState?.loading) return <PageLoading />;
-      // return (
-        // <>
-        //   {children}
-        //   {!props.location?.pathname?.includes('/login') && (
-        //     <SettingDrawer
-        //       enableDarkTheme
-        //       settings={initialState?.settings}
-        //       onSettingChange={(settings) => {
-        //         setInitialState((preInitialState) => ({
-        //           ...preInitialState,
-        //           settings,
-        //         }));
-        //       }}
-        //     />
-        //   )}
-        // </>
-      // );
+    // if (initialState?.loading) return <PageLoading />;
+    // return (
+    // <>
+    //   {children}
+    //   {!props.location?.pathname?.includes('/login') && (
+    //     <SettingDrawer
+    //       enableDarkTheme
+    //       settings={initialState?.settings}
+    //       onSettingChange={(settings) => {
+    //         setInitialState((preInitialState) => ({
+    //           ...preInitialState,
+    //           settings,
+    //         }));
+    //       }}
+    //     />
+    //   )}
+    // </>
+    // );
     // },
     ...initialState?.settings,
   };

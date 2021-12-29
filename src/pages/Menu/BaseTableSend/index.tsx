@@ -7,7 +7,7 @@ import { getTable } from '@/services/Menu/baseTableCreate';
 import MobileInput from './components/MobileInput';
 import SendModal from './components/SendModal.tsx';
 
-import './index.less';
+import styles from './index.less';
 
 type GithubIssueItem = {
   name: string;
@@ -74,7 +74,7 @@ const BaseTableSend = () => {
   return (
     <>
       <ProTable<GithubIssueItem>
-        tableClassName="tableStyle"
+        tableClassName={styles.tableStyle}
         options={false}
         rowSelection={{}}
         columns={columns}

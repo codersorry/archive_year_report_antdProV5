@@ -206,7 +206,7 @@ export default {
     const { password, username, type } = req.body;
 
     await waitTime(2000);
-    if (password === 'qwer' && username === 'admin') {
+    if (password === 'edoc2' && username === 'admin') {
       res.send({
         status: 'ok',
         type,
@@ -218,7 +218,7 @@ export default {
       });
       return;
     }
-    if (password === 'qwer' && username === 'user') {
+    if (password === 'edoc2' && username === 'user') {
       res.send({
         status: 'ok',
         type,

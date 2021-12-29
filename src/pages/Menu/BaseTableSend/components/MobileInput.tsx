@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal, message, Button } from 'antd';
 
+import styles from '../index.less';
+
 const MobileInput = (props) => {
   const { isModalVisible, isShowModal } = props;
 
@@ -25,7 +27,7 @@ const MobileInput = (props) => {
       destroyOnClose={true}
       visible={isModalVisible}
       footer={
-        <div className="footerStyle">
+        <div className={styles.footerStyle}>
           <Button key="copy" type="primary" onClick={() => copy()}>
             复制链接
           </Button>

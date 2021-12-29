@@ -7,7 +7,7 @@ import ProTable from '@ant-design/pro-table';
 import { getTable } from '@/services/Menu/baseTableCreate';
 import CreateOrEdit from './components/CreateOrEdit';
 
-import './index.less';
+import styles from './index.less';
 
 type GithubIssueItem = {
   name: string;
@@ -98,7 +98,7 @@ const OrgManage = () => {
   return (
     <>
       <ProTable<GithubIssueItem>
-        tableClassName="tableStyle"
+        tableClassName={styles.tableStyle}
         options={false}
         rowSelection={{}}
         columns={columns}

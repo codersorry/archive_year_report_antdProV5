@@ -30,6 +30,9 @@ const loginOut = async () => {
       }),
     });
   }
+  //清除本地token和userInfo
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('userInfo');
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {

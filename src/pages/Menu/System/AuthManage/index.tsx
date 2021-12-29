@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
 import { getAuth } from '@/services/Menu/System/authManage';
-import { Checkbox, Button } from 'antd';
+import { Checkbox } from 'antd';
 
-import './index.less';
+import styles from './index.less';
 
 type authType = {
   home: boolean;
@@ -374,7 +374,7 @@ const AuthManage = () => {
     <>
       <ProTable<GithubIssueItem>
         dataSource={tableData.data}
-        tableClassName="tableStyle"
+        tableClassName={styles.tableStyle}
         options={false}
         rowSelection={{}}
         columns={columns}
